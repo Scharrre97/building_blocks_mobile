@@ -1,4 +1,4 @@
-angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'building-blocks.services', 'ngResource'])
+angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'building-blocks.services', 'ngResource', 'ionic-datepicker'])
     .constant('API_URL', 'https://building-blockz.herokuapp.com/api/v1')
 
 .run(function($ionicPlatform) {
@@ -14,6 +14,27 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
   });
 })
 
+.config(function (ionicDatePickerProvider) {
+    var datePickerObj = {
+      inputDate: new Date(),
+      titleLabel: 'Select a Date',
+      setLabel: 'Set',
+      todayLabel: 'Today',
+      closeLabel: 'Close',
+      mondayFirst: false,
+      weeksList: ["S", "M", "T", "W", "T", "F", "S"],
+      monthsList: ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
+      templateType: 'popup',
+      from: new Date(2012, 8, 1),
+      to: new Date(2019, 8, 1),
+      showTodayButton: true,
+      dateFormat: 'dd MMMM yyyy',
+      closeOnSelect: false,
+      disableWeekdays: []
+    };
+    ionicDatePickerProvider.configDatePicker(datePickerObj);
+  })
+  
 .config(function($ionicConfigProvider) {
     $ionicConfigProvider.tabs.position('bottom');
 })
