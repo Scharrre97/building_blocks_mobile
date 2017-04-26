@@ -32,7 +32,7 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
     var datePickerObj = {
       inputDate: new Date(),
       titleLabel: 'Select a Date',
-      setLabel: 'Set',
+      setLabel: 'Book',
       todayLabel: 'Today',
       closeLabel: 'Close',
       mondayFirst: false,
@@ -68,6 +68,12 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
             return $auth.validateUser();
           }
         }
+      })
+
+      .state('book', {
+        url: '/book',
+        templateUrl: 'templates/book/book.html',
+        controller: 'BookController'
       })
 
       .state('tab.home', {

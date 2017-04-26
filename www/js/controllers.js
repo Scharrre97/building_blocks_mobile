@@ -5,12 +5,15 @@ angular.module('building-blocks.controllers', [])
     $scope.news = News.query();
   })
 
-.controller('FacilityController', function($scope, Facility, ionicDatePicker) {
+  .controller('BookController', function() {
+  })
+
+.controller('FacilityController', function($scope, $state, Facility, ionicDatePicker) {
    $scope.facilities = Facility.query();
 
    var ipObj1 = {
       callback: function (val) {  //Mandatory
-        console.log('Return value from the datepicker popup is : ' + val, new Date(val));
+        $state.go('book');
       },
       disabledDates: [],
       from: new Date(2017, 2, 26), //Optional
