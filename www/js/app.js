@@ -1,4 +1,4 @@
-angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'building-blocks.services', 'ngResource', 'ionic-datepicker'])
+angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'building-blocks.services', 'ngResource', 'ng-token-auth', 'ionic-datepicker'])
     .constant('API_URL', 'https://building-blockz.herokuapp.com/api/v1')
 
 .run(function($ionicPlatform) {
@@ -12,6 +12,20 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
       StatusBar.styleDefault();
     }
   });
+})
+
+.config(function($authProvider, API_URL) {
+  $authProvider.configure({
+    apiUrl: API_URL
+  });
+})
+
+.config(function ($httpProvider) {
+  $httpProvider.defaults.headers.common.Accept = 'application/json';
+})
+
+.config(function($ionicConfigProvider) {
+  $ionicConfigProvider.tabs.position('bottom');
 })
 
 .config(function (ionicDatePickerProvider) {
@@ -34,41 +48,8 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
     };
     ionicDatePickerProvider.configDatePicker(datePickerObj);
   })
-  
-.config(function($ionicConfigProvider) {
-
-angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'building-blocks.services', 'ngResource', 'ng-token-auth'])
-  .constant('API_URL', 'https://building-blockz.herokuapp.com/api/v1')
-
-  .run(function($ionicPlatform) {
-    $ionicPlatform.ready(function() {
-      if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-        cordova.plugins.Keyboard.disableScroll(true);
-      }
-      if (window.StatusBar) {
-        StatusBar.styleDefault();
-      }
-    });
-  })
-
-  .config(function($authProvider, API_URL) {
-    $authProvider.configure({
-      apiUrl: API_URL
-    });
-  })
-
-  .config(function ($httpProvider) {
-    $httpProvider.defaults.headers.common.Accept = 'application/json';
-  })
-
-  .config(function($ionicConfigProvider) {
-
-    $ionicConfigProvider.tabs.position('bottom');
-  })
 
   .config(function($stateProvider, $urlRouterProvider) {
-
 
     $stateProvider
 
