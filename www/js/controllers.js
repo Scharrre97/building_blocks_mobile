@@ -1,11 +1,11 @@
 angular.module('building-blocks.controllers', [])
 
   .controller('HomeController', function($scope, News) {
-
     $scope.news = News.query();
   })
 
-  .controller('BookController', function() {
+  .controller('BookController', function($stateParams) {
+    console.log($stateParams.bookDate);
   })
 
 .controller('FacilityController', function($scope, $state, Facility, ionicDatePicker) {
@@ -13,7 +13,8 @@ angular.module('building-blocks.controllers', [])
 
    var ipObj1 = {
       callback: function (val) {  //Mandatory
-        $state.go('book');
+        var date = new Date(val);
+        $state.go('book', {bookDate: {some: date}});
       },
       disabledDates: [],
       from: new Date(2017, 2, 26), //Optional
@@ -77,7 +78,6 @@ angular.module('building-blocks.controllers', [])
           $state.go('user');
         })
         .catch(function(resp) {
-
         });
     };
   });

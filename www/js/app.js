@@ -71,9 +71,10 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
       })
 
       .state('book', {
-        url: '/book',
+        url: '/book/{bookDate:json}',
         templateUrl: 'templates/book/book.html',
-        controller: 'BookController'
+        controller: 'BookController',
+        params: {bookDate: null}
       })
 
       .state('tab.home', {
@@ -102,7 +103,7 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
         views: {
           'tab-facilities': {
             templateUrl: 'templates/facilities/facilities.html',
-            controller: 'FacilityController'
+            controller: 'FacilityController',
           }
         }
       })
