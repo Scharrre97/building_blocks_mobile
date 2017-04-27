@@ -27,7 +27,7 @@ angular.module('building-blocks.services', [])
 })
 
 .factory('Book', function($resource, API_URL) {
-  return $resource(API_URL + '/facilities/timeslots/id', {}, {
+  return $resource(API_URL + '/facilities/:id/timeslots', {id: '@id'}, {
     query: {
       method: 'GET',
       isArray: true
