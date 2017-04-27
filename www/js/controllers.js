@@ -7,7 +7,7 @@ angular.module('building-blocks.controllers', [])
   .controller('BookController', function ($stateParams, $filter, $scope, Book) {
     console.log($stateParams.booking);
     $scope.timeslots = Book.query($stateParams.booking);
-    $scope.nisse = $filter('date')($stateParams.booking.date, 'EEEE yyyy-MM-dd');
+    $scope.nisse = $filter('date')($stateParams.booking.date, 'yyyy-MM-dd');
   })
 
   .controller('FacilityController', function ($scope, $q, $state, Facility, ionicDatePicker) {
