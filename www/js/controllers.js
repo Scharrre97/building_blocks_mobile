@@ -4,9 +4,9 @@ angular.module('building-blocks.controllers', [])
     $scope.news = News.query();
   })
 
-  .controller('BookController', function ($stateParams) {
-    debugger;
+  .controller('BookController', function ($stateParams, $scope, Book) {
     console.log($stateParams.booking);
+    $scope.timeslots = Book.query($stateParams.booking);
   })
 
   .controller('FacilityController', function ($scope, $q, $state, Facility, ionicDatePicker) {
