@@ -1,0 +1,12 @@
+<ion-view title='<img class="title-image" src="../img/logoFinal.png" />'>
+  <ion-content class="padding">
+    <h3 class="title">BOOKINGS</h3>
+    <p>{{nisse}}</p>
+    <div class="col" ng-if="timeslots" ng-repeat="timeslot in timeslots">
+      <div class="item item-divider">
+        <p>{{timeslot.start_time}}</p>
+        <p>{{timeslot.end_time}}</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,16 +1,25 @@
 <ion-view title='<img class="title-image" src="../img/logoFinal.png" />'>
   <ion-content>
-    <h3 class="title">FACILITIES</h3>
-    <div ng-repeat="facility in facilities" width="100%">
-      <div  class="my-col-50" ng-if="$even">
-        <div class="card" style="width: 168px; height: 185px">
-          <img class="fac-icon" src="../img/Facility_icon3.png">
-          <div class="item item-divider fac">
-          <h4 style="text-align: center;">{{facility.name}}</h4>
-          </div>
-          <div ng-if="facilities" class="item item-text-wrap">
-            <h5>{{facility.description}}</h5>
-            <p>{{facility.rules}}</p>
+   <h3 class="title">FACILITIES</h3>
+    <div class="row">
+      <div ng-if="facilities" ng-repeat="facility in facilities">
+        <div ng-if="($index = $odd)">
+          <div class=“col”>
+            <div class="card" style="width: 168px;">
+              <img class="fac-icon" src="../img/Facility_icon3.png">
+              <div class="item item-divider fac">
+              <h4 style="text-align: center;">{{facility.name}}</h4>
+            </div>
+            <div class="item item-text-wrap">
+              <h5>{{facility.description}}</h5>
+              <p>{{facility.rules}}</p>
+            </div>
+            <div>
+              <ionic-datepicker>
+                <button class="button button-full company-color" ng-click="openDatePicker(facility.id)">Open Booking</button>
+              </ionic-datepicker>
+            </div>
+            </div>
           </div>
         </div>
       </div>

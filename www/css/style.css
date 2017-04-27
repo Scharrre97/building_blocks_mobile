@@ -73,6 +73,13 @@ title-image {
   height: 65px;
 }
 
+
 .my-col-50 {
   float:left;width:50%;
 }
+
+.company-color {
+    background-color: #23c1a0;
+    color: white;
+ }
+
