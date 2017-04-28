@@ -83,6 +83,12 @@ background:url('../img/contact.background.jpg') no-repeat center center fixed;
         -moz-background-size: cover;
         background-size: cover;
         height: 100%;
+        filter: blur(1px);
+        filter: saturate(50%);
+        -webkit-filter: saturate(50%);
+        -moz-filter: saturate(50%);
+        -o-filter: saturate(50%);
+        -ms-filter: saturate(50%);
 }
 
 .card-contact {
@@ -93,7 +99,10 @@ background:url('../img/contact.background.jpg') no-repeat center center fixed;
   margin-right: auto;
 }
 
+.title-contact {
+  color: #23c1;
+}
+
 .contact-text {
-  color: white;
-  background-color: white;
+  color: black;
 }
