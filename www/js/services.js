@@ -17,6 +17,15 @@ angular.module('building-blocks.services', [])
   });
 })
 
+
+.factory('Booking', function($resource, API_URL) {
+  return $resource(API_URL + '/facilities/:facility_id/bookings', {facility_id: '@facility_id'}, {
+    save: {
+      method: 'POST'
+    }
+  });
+})
+
 .factory('Facility', function($resource, API_URL) {
   return $resource(API_URL + '/facilities', {}, {
     query: {

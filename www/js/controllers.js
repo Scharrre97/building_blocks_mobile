@@ -4,10 +4,20 @@ angular.module('building-blocks.controllers', [])
     $scope.news = News.query();
   })
 
-  .controller('BookController', function ($stateParams, $filter, $scope, Book) {
+  .controller('BookController', function ($stateParams, $filter, $scope, Book, Booking) {
     console.log($stateParams.booking);
     $scope.timeslots = Book.query($stateParams.booking);
-    $scope.nisse = $filter('date')($stateParams.booking.date, 'yyyy-MM-dd');
+    $scope.id = $stateParams.booking.id;
+    $scope.date = $filter('date')($stateParams.booking.date, 'yyyy-MM-dd');
+    $scope.openDatePicker = function (id, date, start_time) {
+      // $scope.id = id;
+      // $scope.date = date;
+      // $scope.start_time = start_time;
+      console.log(id, date, start_time);
+      Booking.save({facility_id: id, start_time: date +" "+start_time, name: "tenant"  }, function (response) {
+      });
+    };
+    debugger;
   })
 
   .controller('FacilityController', function ($scope, $q, $state, Facility, ionicDatePicker) {

@@ -1,12 +1,17 @@
 <ion-view title='<img class="title-image" src="../img/logoFinal.png" />'>
   <ion-content class="padding">
     <h3 class="title">BOOKINGS</h3>
-    <p>{{nisse}}</p>
+    <p ng-if="error">{{error}}</p>
+    <p ng-if="message">{{message}}</p>
+    <p>{{date}}</p>
     <div class="col" ng-if="timeslots" ng-repeat="timeslot in timeslots">
+      <button class="button button-full company-color" ng-click="openDatePicker(id, date, timeslot.start_time)" >
       <div class="item item-divider">
         <p>{{timeslot.start_time}}</p>
         <p>{{timeslot.end_time}}</p>
+        <p></p>
       </div>
+      </button>
     </div>
   </ion-content>
 </ion-view>
