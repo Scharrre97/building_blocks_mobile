@@ -98,3 +98,11 @@ background:url('../img/contact.background.jpg') no-repeat center center fixed;
   margin-left: auto;
   margin-right: auto;
 }
+
+.help-request {
+  background:url('../img/icon-message.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 600px;
+}

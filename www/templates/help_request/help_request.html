@@ -3,30 +3,30 @@
     <h3 class="title">MESSAGE</h3>
     <p ng-if="error">{{error}}</p>
     <p ng-if="message">{{message}}</p>
-     <div class="list">
-       <label class="item item-input">
-         <span class="input-label">Title</span>
-         <input type="text" ng-model="help_request.title">
-       </label>
-       <label class="item item-input">
-         <span class="input-label">Message</span>
-         <input type="text" ng-model="help_request.message">
-       </label>
-       <ul class="list">
-
-        <li class="item item-toggle">
-          <h3>Urgent</h3>
-           <label class="toggle toggle-assertive">
-              <input type="checkbox" ng-model="help_request.urgent">
-               <div class="track">
-                 <div class="handle"></div>
-               </div>
-             </label>
-          </li>
-        </ul>
-         <label class="item">
-         <button class="button button-block button-assertive" ng-click="createHelpRequest()">Send</button>
-       </label>
-     </div>
+    <div class="help-request">
+          <label class="item item-input">
+           <span class="input-label">Title</span>
+           <input type="text" ng-model="help_request.title">
+         </label>
+          <label class="item item-input">
+           <span class="input-label">Message</span>
+           <input type="text" ng-model="help_request.message">
+         </label>
+          <ul class="list">
+            <li class="item item-toggle">
+              <h3>Urgent</h3>
+              <label class="toggle toggle-assertive">
+                <input type="checkbox" ng-model="help_request.urgent">
+                 <div class="track">
+                   <div class="handle"></div>
+                 </div>
+               </label>
+            </li>
+          </ul>
+          <label class="item">
+            <button class="button button-block button-assertive" ng-click="createHelpRequest()">Send</button>
+          </label>
+        </div>
+      </div>
   </ion-content>
 </ion-view>
