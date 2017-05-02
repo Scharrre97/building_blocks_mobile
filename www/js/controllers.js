@@ -23,10 +23,13 @@ angular.module('building-blocks.controllers', [])
       });
     };
 
-    function grabBookedSlots(timeslots, blocks) {
+    function grabBookedSlots(timeslots, blocks, $filter) {
       // loop through blocks and change timeslots based on whether or not that slot is booked
-      timeslots.forEach(function(timeslot) {
+      timeslots.forEach(function(timeslot, $filter) {
 // format date on timeslot, then compare it to the start_time on blocks.
+        console.log(timeslot);
+        $scope.timeslot = $filter('timeslot')($stateParams.booking.date, 'yyyy-MM-dd HH:mm');
+        debugger;
         if (blocks.includes(timeslot)) {
           timeslot.booked = true;
         } else {
