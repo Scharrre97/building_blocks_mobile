@@ -4,20 +4,36 @@ angular.module('building-blocks.controllers', [])
     $scope.news = News.query();
   })
 
-  .controller('BookController', function ($stateParams, $filter, $scope, Book, Booking) {
-    console.log($stateParams.booking);
-    $scope.timeslots = Book.query($stateParams.booking);
+  .controller('BookController', function ($stateParams, $filter, $scope, Book, Booking, Block) {
+    Book.query($stateParams.booking, function(response) {
+      $scope.timeslots = response;
+      Block.query($stateParams.booking, function(response) {
+        $scope.blocks = response;
+        console.log($scope.timeslots, $scope.blocks);
+        grabBookedSlots($scope.timeslots, $scope.blocks);
+      });
+
+    });
     $scope.id = $stateParams.booking.id;
+
+
     $scope.date = $filter('date')($stateParams.booking.date, 'yyyy-MM-dd');
     $scope.openDatePicker = function (id, date, start_time) {
-      // $scope.id = id;
-      // $scope.date = date;
-      // $scope.start_time = start_time;
-      console.log(id, date, start_time);
       Booking.save({facility_id: id, start_time: date +" "+start_time, name: "tenant"  }, function (response) {
       });
     };
-    debugger;
+
+    function grabBookedSlots(timeslots, blocks) {
+      // loop through blocks and change timeslots based on whether or not that slot is booked
+      timeslots.forEach(function(timeslot) {
+// format date on timeslot, then compare it to the start_time on blocks.
+        if (blocks.includes(timeslot)) {
+          timeslot.booked = true;
+        } else {
+          timeslot.booked = false;
+        }
+      })
+    }
   })
 
   .controller('FacilityController', function ($scope, $q, $state, Facility, ionicDatePicker) {
