@@ -73,13 +73,42 @@ title-image {
   height: 65px;
 }
 
-
 .my-col-50 {
   float:left;width:50%;
 }
+
 
 .company-color {
     background-color: #23c1a0;
     color: white;
  }
 
+.contact {
+background:url('../img/contact.background.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        height: 700px;
+        filter: blur(2px);
+        filter: saturate(50%);
+        -webkit-filter: saturate(50%);
+        -moz-filter: saturate(50%);
+        -o-filter: saturate(50%);
+        -ms-filter: saturate(50%);
+}
+
+.card-contact {
+  opacity: 0.8;
+  width: 70%;
+  height: 65%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.help-request {
+  background:url('../img/icon-message.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 600px;
+}
