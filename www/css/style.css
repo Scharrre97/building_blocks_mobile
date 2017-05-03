@@ -37,16 +37,14 @@ img {
     width: 100%
 }
 
-title-image {
+.title-image {
   margin-top: 0px;
   height: 25px;
 }
 
-.card
-{
-  margin-bottom: -15px !important;
+.card {
+  margin-bottom: -10px !important;
   margin-right: 1px !important;
-
 }
 
 .title {
@@ -111,4 +109,21 @@ background:url('../img/contact.background.jpg') no-repeat center center fixed;
   -moz-background-size: cover;
   background-size: cover;
   height: 600px;
+}
+
+
+.booked {
+  background-color: #999;
+  color: #ffffff;
+  text-align: center;
+}
+
+.availble {
+  background-color: #23c1a0;
+  color: #ffffff;
+}
+
+.desc {
+  color: #999;
+  text-align: center;
 }

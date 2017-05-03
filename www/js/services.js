@@ -53,6 +53,14 @@ angular.module('building-blocks.services', [])
     });
   })
 
+  .factory('Facilities', function($resource, API_URL) {
+    return $resource(API_URL + '/facilities/:id/', {id: '@id'}, {
+      query: {
+        method: 'GET'
+      },
+    });
+  })
+
   .factory('AuthService', function($resource, API_URL) {
     return $resource(API_URL + '/auth', {}, {
       save: {
