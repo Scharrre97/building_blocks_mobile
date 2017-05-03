@@ -18,6 +18,7 @@ angular.module('building-blocks.controllers', [])
 
 
     $scope.date = $filter('date')($stateParams.booking.date, 'yyyy-MM-dd');
+    $scope.dateandtime = $filter('date')($stateParams.booking.date, 'yyyy-MM-dd');
     $scope.openDatePicker = function (id, date, start_time) {
       Booking.save({facility_id: id, start_time: date +" "+start_time, name: "tenant"  }, function (response) {
       });
@@ -25,10 +26,11 @@ angular.module('building-blocks.controllers', [])
 
     function grabBookedSlots(timeslots, blocks, $filter) {
       // loop through blocks and change timeslots based on whether or not that slot is booked
-      timeslots.forEach(function(timeslot, $filter) {
+      timeslots.forEach(function(timeslot) {
 // format date on timeslot, then compare it to the start_time on blocks.
-        console.log(timeslot);
-        $scope.timeslot = $filter('timeslot')($stateParams.booking.date, 'yyyy-MM-dd HH:mm');
+
+        console.log(timeslot.start_time);
+
         debugger;
         if (blocks.includes(timeslot)) {
           timeslot.booked = true;
