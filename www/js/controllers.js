@@ -4,7 +4,7 @@ angular.module('building-blocks.controllers', [])
     $scope.news = News.query();
   })
 
-  .controller('BookController', function ($stateParams, $filter, $scope, Facilities, Book, Booking, Block) {
+  .controller('BookController', function ($stateParams, $filter, $scope, $state, Facilities, Book, Booking, Block) {
     Book.query($stateParams.booking, function(response) {
       $scope.timeslots = response;
       Facilities.query($stateParams.booking, function(response) {
@@ -23,7 +23,18 @@ angular.module('building-blocks.controllers', [])
     $scope.openDatePicker = function (id, date, start_time) {
       Booking.save({facility_id: id, start_time: date +" "+start_time, name: "tenant"  }, function (response) {
         $scope.message = response.message;
-        $state.go('tab.home');
+        Book.query($stateParams.booking, function(response) {
+          $scope.timeslots = response;
+          Facilities.query($stateParams.booking, function(response) {
+            $scope.facilities = response;
+            Block.query($stateParams.booking, function (response) {
+              $scope.blocks = response;
+              console.log($scope.timeslots, $scope.blocks, $scope.facilities);
+              grabBookedSlots($scope.timeslots, $scope.blocks, $scope.facilities);
+            });
+          })
+        });
+        $state.go('tab.facilities');
       });
     };
 
