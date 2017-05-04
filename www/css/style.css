@@ -20,7 +20,7 @@ img {
 }
 
 .index {
-    padding-top: 5px;
+    padding-top: 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -44,7 +44,8 @@ img {
 
 .card {
   margin-bottom: -10px !important;
-  margin-right: 1px !important;
+  margin-right: 10px !important;
+  align-content: inherit;
 }
 
 .title {
@@ -65,8 +66,8 @@ img {
   padding: 15px;
 }
 
-.fac-icon {
-  padding-left: 50px;
+.faci {
+  padding-left: 38px;
   margin-bottom: 5px;
   height: 65px;
 }
@@ -127,3 +128,11 @@ background:url('../img/contact.background.jpg') no-repeat center center fixed;
   color: #999;
   text-align: center;
 }
+
+.button.button-block, .button.button-full {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0px;
+}
+
+

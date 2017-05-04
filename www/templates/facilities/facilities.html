@@ -1,30 +1,24 @@
 
-<ion-view title='<img class="title-image" src="../img/logoFinal.png" />'>
+<ion-view title='<img class="title-image" src="img/logoFinal.png" />'>
   <ion-content>
     <h3 class="title">FACILITIES</h3>
     <div ng-repeat="facility in facilities" width="100%">
       <div  class="my-col-50" ng-if="$even">
-        <div class="card" style="width: 168px; height: 190px">
-          <img class="fac-icon" src="../img/Facility_icon3.png">
+        <div class="card" style="width: 140px; height: 153px">
+          <img class="faci" src="/img/facilityicon.jpg">
           <div class="item item-divider fac">
             <h4 style="text-align: center;">{{facility.name}}</h4>
           </div>
-          <div class="item item-text-wrap">
-            <h5>{{facility.description}}</h5>
-            <button class="button button-full company-color" ng-click="openDatePicker(facility.id)">Open Booking</button>
-          </div>
+            <button class="button button-full company-color" ng-click="openDatePicker(facility.id)">Open Bookings</button>
         </div>
       </div>
       <div  class="my-col-50" ng-if="$odd">
-        <div class="card" style="width: 168px; height: 190px">
-          <img class="fac-icon" src="../img/Facility_icon3.png">
+        <div class="card" style="width: 140px; height: 153px">
+          <img class="faci" ng-src="/img/facilityicon.jpg">
           <div class="item item-divider fac">
             <h4 style="text-align: center;">{{facility.name}}</h4>
           </div>
-          <div class="item item-text-wrap">
-            <h5>{{facility.description}}</h5>
-          <button class="button button-full company-color" ng-click="openDatePicker(facility.id)">Open Booking</button>
-        </div>
+          <button class="button button-full company-color" ng-click="openDatePicker(facility.id)">Open Bookings</button>
       </div>
     </div>
   </ion-content>
