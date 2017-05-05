@@ -129,13 +129,7 @@ background:url('../img/contact.background.jpg') no-repeat center center fixed;
   text-align: center;
 }
 
-.button.button-block {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  border: 0px;
-}
-
-.button.button-full {
+.button.button-block, .button.button-full {
   margin-top: 0px;
   margin-bottom: 0px;
   border: 0px;
