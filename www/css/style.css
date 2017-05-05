@@ -34,6 +34,7 @@ img {
     position:absolute;
     text-align:center;
     top: 85px;
+    font-family: 'Julius Sans One', sans-serif;
     width: 100%
 }
 
@@ -52,6 +53,7 @@ img {
   color: #303030 ;
   padding-top: 5px;
   text-align: center;
+  font-family: 'Julius Sans One', sans-serif;
 }
 
 .news-title {
@@ -59,11 +61,15 @@ img {
   text-align: center;
   padding-top: 10px ;
   margin-bottom: -20px;
+  font-family: 'Julius Sans One', sans-serif;
+
 }
 
 .brf-text {
+  font-size: 15px;
   text-align: center;
   padding: 15px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .faci {
@@ -140,4 +146,12 @@ background:url('../img/contact.background.jpg') no-repeat center center fixed;
   margin-bottom: 0px;
   border: 0px;
   padding: 10px 10px 10px 10px;
+}
+
+h3 {
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.input-label {
+  font-family: 'Julius Sans One', sans-serif;
 }
