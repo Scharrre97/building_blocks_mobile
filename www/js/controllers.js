@@ -42,10 +42,8 @@ angular.module('building-blocks.controllers', [])
 
       timeslots.forEach(function(timeslot) {
 
-
         console.log(timeslot.start_time);
 
-        debugger;
         if (blocks.includes(timeslot)) {
           timeslot.booked = true;
         } else {
