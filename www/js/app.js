@@ -1,6 +1,15 @@
-angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'building-blocks.services', 'ngResource', 'ng-token-auth', 'ionic-datepicker', 'chart.js'])
+angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'building-blocks.services', 'ngResource', 'ng-token-auth', 'ionic-datepicker', 'chart.js', 'ionic.cloud'])
     .constant('API_URL', 'http://localhost:3000/api/v1')
     // .constant('API_URL', 'https://building-blockz.herokuapp.com/api/v1')
+
+
+.config(function($ionicCloudProvider) {
+  $ionicCloudProvider.init({
+    "core": {
+      "app_id": "cd606483"
+    }
+  });
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
